@@ -1,0 +1,44 @@
+<html>
+
+<head>
+<title>African Honey Bees</title>
+</head>
+
+<body>
+
+<h1>   
+Introduction
+</h1>
+<p>The African Honey Bee (AHB), also nicknamed the "killer bee", has had a significant impact on the agricultural economy. This species is unique from many other 
+bees because of its extremely defensive nature and the tendency of its colonies to swarm and spread. The implications of the AHB has been astronimical. Areas populated by 
+AHB colonies have been quarantined, prohibiting the importation of the European Honey Bee. The subsequent lack of bees has taken a toll on crop pollination. 
+Thus, there has been strong interest in predicting the arrival of the AHB to the United States. </p>
+
+<h2>
+Fitting the Data
+</h2>
+
+<p>
+In order to obtain the data below, cardboard box traps with a chemical attractant were placed at an average of every 93km. Then, every month, the boxes were checked for presence of the AHB. 
+</p>
+
+<!--begin.rcode
+
+bee = read.table("beedata.csv", sep=",", header=TRUE)
+
+end.rcode-->
+
+<p>You can also embed plots, for example:</p>
+
+<!--begin.rcode fig.width=7, fig.height=6
+hist(bee$Transit.Time, breaks=seq(0, 21, by=2), prob = TRUE, main = "Histogram of Estimated Transit Times",
+     xlab = "Estimated transit time (mo per 100 km)", ylab = "Frequency")
+end.rcode-->
+
+
+
+<p>
+
+</p>
+</body>
+</html>
