@@ -53,8 +53,10 @@ Thus, there has been strong interest in predicting the arrival of the AHB to the
 #In order to obtain the data below, cardboard box traps with a chemical attractant were placed every 300-500 m (ASK SAMSON TO INTERPRET THIS PART). Then, every month, the 
 boxes were checked for presence of the AHB. 
 
-It was initially thought that the data would follow a normal distribution. 
-#Samson's part about why the normal distribution is not a good fit and how he evaluated it mathematically
+It was initially thought that the data would follow a normal distribution. However, after fitting a normal QQ plot, we noticed that our data doesn't lie on the 45 degree line. 
+We noticed that the sample quantiles towards the right are significantly larger than the theoretical quantiles the normal distribution would predict. If we were to use a normal
+distribution to model our data, it would severly underpredict the frequency of extreme values of x. This means that we would understate the possibilities of the AHB arrival. 
+Knowing this, it's possible that we can fit a better distribution function for the AHB data with the gamma distribution. 
 
 #The Gamma Distribution is a continuous probability density function that is used to model the time required to perform some operation. Just as the Poisson distribution is the 
 time-continuous distribution of the binomial, so is the gamma distribution the time-continuous analog of the negative binomial.
