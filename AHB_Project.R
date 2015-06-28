@@ -3,6 +3,7 @@ hist(BeeTable$Transit.Time, breaks=seq(0, 21, by=2))
 #curve(dgamma(x= BeeTable$Transit.Time, shape=2, scale=1.5), from= 0, to = 20, main = "Gamma Distribution")
 dgamma(x= BeeTable$Transit.Time, shape=2, scale=1.5)
 
+# shinyApp(ui, server)
 
 
 library(shiny)
