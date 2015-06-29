@@ -1,7 +1,7 @@
 <html>
 
 <head>
-<title>African Honey Bees</title>
+<title>Arrival of African Honey Bees in the US</title>
 </head>
 
 <body>
@@ -27,14 +27,14 @@ Fitting the Data
 It was initially thought that the data would follow a normal distribution. However, after fitting a normal QQ plot, we noticed that our data doesn't lie on the 45 degree line. 
 We noticed that the sample quantiles towards the right are significantly larger than the theoretical quantiles the normal distribution would predict.
 
-<img src="images/normalqq.jpeg"/>
+
 
 If we were to use a normal distribution to model our data, it would severly underpredict the frequency of extreme values of x. This means that we would understate the possibilities of the AHB arrival.
 
 Knowing this, it's possible that we can fit a better distribution function for the AHB data with the gamma distribution. 
 
 </p>
-
+<img src="images/normalqq.jpeg"/>
 <h2>
 The Gamma Distribution 
 </h2>
@@ -50,8 +50,10 @@ A Gamma distribution was chosen to model the unimodal, skewed distribution which
 Here they look at the reciprocal of speed, the "transit time" which models instead, the time required to travel a fixed distance.
 
 Displayed below is a graph of the normal vs. the gamma distribution fitted on the data of the estimated transit time for AHBs. We see that the gamma distribution fits the data a lot better and weighs right tailed distributions more likely compared to the normal distribution. 
-<img src="images/hist.jpeg"/>
+
 </p>
+
+<img src="images/hist.jpeg"/>
 
 <h2>
 Conclusion
@@ -59,7 +61,11 @@ Conclusion
 <p>
 The Gamma distribution was found to be a good predictor of the African Honey Bee arrival time. The best fit gamma distribution for this data had an alpha value of 1.61 and a beta value of 2.37. 
 
+<<<<<<< HEAD
 The strength of such a distribution is its ability to take into account the natural variability of the arrival. However, its limitations are also plentiful as there are many conditions that are static. For instance, this distribution does not take into account the presence of any predators or environmental factors.
+=======
+The strength of such a distribution is its ability to take into account the natural variability of the arrival. However, its limitations are also plentiful as there are many conditions that are static. For instance, this distribution does not take into account the presence of any predators or environmental factors. 
+>>>>>>> 23b6e5fd7495ac2028d50d36ffc59bb66f539ab9
 </p>
 
 <h1>
@@ -108,7 +114,7 @@ Notice what happens to the shape when you change the alpha parameter to 1, keepi
 Now, observe the change when you vary the beta parameter while keeping the alpha parameter constant. Beta has a strong impact on the shape of the gamma distribution. When beta is less than 1, we tend to observe relatively broad distributions with long tails. As the value of beta increases, the distributions become tighter. This is because the variance of the gamma distribution is alpha/beta^(2)
 </p>
 
-
+Alpha and Beta values are both positive where &#945; is a shape parameter and &#946; is a scale parameter. When &#945; is an integer,  
 
 <div class="form-group shiny-input-container">
 <label class="control-label" for="alpha">Pick a Number</label>
