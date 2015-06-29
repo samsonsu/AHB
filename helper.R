@@ -6,7 +6,8 @@ graphGamma = function(alpha=1, beta=1) {
 
 
 plotCDF = function(alpha = 1, beta = 1){
-  plot(ecdf(rgamma(1000, 1,1)))
+  title = paste("CDF of Gamma Distribution with alpha =", alpha, "and beta =", beta)
+  plot(ecdf(rgamma(1000, 1,1)), main = title, ylab = "", xlab = "")
 }
 
 dgamma(10, shape= 1)
