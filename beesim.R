@@ -26,15 +26,4 @@ legend("topright", cex=0.75, pch=16,
 # dgamma(x= bee$Transit.Time, shape=1, scale=1.5)
 #make a slider thingy to adjust the shape and the scale
 
-library("")
 
-#Next, need to make tutorial and teach about what a gamma distribution is and why the normal curve is not a good
-#fit for this data 
-
-#Put onto a shiny package with little button and slider thingies 
-
-#one check box for normal or gamma dist
-#one slider for changing the gamma parameters maybe? <--would need to know how to choose 
-#best parameters...
-
-#somehow need to figure out how to make it interactive 

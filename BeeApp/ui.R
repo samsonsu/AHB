@@ -4,23 +4,21 @@ library(shiny)
 shinyUI(fluidPage(
   
   # Application title
-  titlePanel("Fitting the Data for AHB"),
+  titlePanel("Graphing a Beta Distribution with varying Alpha and Beta values"),
   
   # Sidebar with controls to select the random distribution type
   # and number of observations to generate. Note the use of the
   # br() element to introduce extra vertical spacing
   sidebarLayout(position = "left",
                 sidebarPanel(
-                  radioButtons("dist", "Distribution type:",
-                               c("Normal" = "norm",
-                                 "Gamma" = "gamma")),
-                  br(),
                   
                   sliderInput("shape", 
-                              "Mite Population", 
+                              "Alpha", 
                               value = 1,
                               min = 0, 
-                              max = 1000)
+                              max = 100), br(), 
+                  sliderInput("shape", "Beta", value=1, 
+                              min = 0, max= 100)
                 ), 
                 
                 
