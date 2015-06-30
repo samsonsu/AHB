@@ -1,6 +1,6 @@
 graphGamma = function(alpha=1, beta=1) {
-  x <- seq(0, 7, by=.001)
-  plot(y=x, dgamma(x, alpha, beta), col = "red", type = "l", xlab = "X",
+  y <- seq(0, 7, by=.001)
+  plot(y=y, dgamma(x, alpha, beta), col = "red", type = "l", xlab = "X",
        ylab="Probability Density", main="Gamma Distribution")
 }
 

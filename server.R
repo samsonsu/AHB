@@ -18,32 +18,29 @@ shinyServer(function(input, output) {
       list(data = dist(input$n), name = input$dist, n = input$n)
     })
   })
-  
-  output$plot1 <- renderPlot({
-    
-    if (input$cdf) {
-      plot(ecdf(data()$data),
-           main=paste('r', data()$name, '(', data()$n, ')', sep=''))
-    }
-    else {
-      hist(data()$data, 
-           main=paste('r', data()$name, '(', data()$n, ')', sep=''))
-    }
-  })
-})
+    ##add if case to account for alpha and beta parameters - above and below
 
-#   plotParams <- reactiveValues(alpha = NULL, beta = NULL)
-# 
-#   observeEvent( input$makePlot || input$makeCDF, {
-#       plotParams$alpha = input$alpha
-#       plotParams$beta = input$beta
-#     })
-#   
-#   output$plot2 <- renderPlot({
-#       if (input$makeCDF){
-#         choosePlot(plotCDF(plotParams$alpha, plotParams$beta))
-#       } 
-#     else{
-#     choosePlot(graphGamma(plotParams$alpha, plotParams$beta))
-#     }
-#   })
+    output$plot1 <- renderPlot({
+      
+      if (input$cdf) {
+        plot(ecdf(data()$data),
+             main=paste('r', data()$name, '(', data()$n, ')', sep=''))
+      }
+      else {
+        hist(data()$data, 
+             main=paste('r', data()$name, '(', data()$n, ')', sep=''))
+      }
+    })
+    
+    plotParams <- reactiveValues(alpha = 1, beta = 1)
+    
+    #input is not an integer????
+    observeEvent( input$makePlot, {
+      plotParams$alpha = input$alpha
+      plotParams$beta = input$beta
+    })
+    
+    output$plot2 <- renderPlot({  
+      graphGamma(alpha = plotParams$alpha, beta = plotParams$beta)
+    })
+})
