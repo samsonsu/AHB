@@ -1,5 +1,9 @@
 <html>
 
+<head>
+<title>Arrival of African Honey Bees in the US</title>
+</head>
+
 <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 <script type="text/x-mathjax-config">MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});</script>
 
@@ -21,9 +25,19 @@
 <script src="shared/bootstrap/shim/html5shiv.min.js"></script>
 <script src="shared/bootstrap/shim/respond.min.js"></script>
 
-<head>
-<title>Arrival of African Honey Bees in the US</title>
-</head>
+<style>
+form {
+    display: inline;
+}
+
+body {
+    background-color: linen;
+}
+
+
+
+</style>
+
 
 <body>
 
@@ -35,8 +49,7 @@ African Honey Bees
 Introduction
 </h2>
 <p>The African Honey Bee (AHB), also nicknamed the "killer bee", has had a significant impact on the agricultural economy. This species is unique from many other 
-bees because of its extremely defensive nature and the tendency of its colonies to swarm and spread. The implications of the AHB has been astronimical. Areas populated by 
-AHB colonies have been quarantined, prohibiting the importation of the European Honey Bee. The subsequent lack of bees has taken a toll on crop pollination. Thus, there has been strong interest in predicting the arrival of the AHB to the United States. The case studied is heavily taken from the <a href="http://www.stat.tamu.edu/~matis/Predicting%20the%20Africanized%20Bee%20Invasion.pdf">work </a> of Matis and Kiffe.
+bees because of its extremely defensive nature and the tendency of its colonies to swarm and spread. The implications of the AHB has been astronimical. Areas populated by AHB colonies have been quarantined, prohibiting the importation of the European Honey Bee. The subsequent lack of bees has taken a toll on crop pollination. Thus, there has been strong interest in predicting the arrival of the AHB to the United States. The case studied is heavily taken from the <a href="http://www.stat.tamu.edu/~matis/Predicting%20the%20Africanized%20Bee%20Invasion.pdf">work </a> of Matis and Kiffe. </a>
 
 In order to obtain the data below, cardboard box traps with a chemical attractant were placed at an average of every 93km (OR 300-500???m). Then, every month, the boxes were checked for presence of the AHB.</p>
 
@@ -45,12 +58,9 @@ Fitting the Data
 </h2>
 
 <p>
-It was initially thought that the data would follow a normal distribution. However, after fitting a normal QQ plot, we noticed that our data doesn't lie on the 45 degree line. 
-We noticed that the sample quantiles towards the right are significantly larger than the theoretical quantiles the normal distribution would predict.
+It was initially thought that the data could follow a normal distribution. However, after fitting a normal QQ plot, we noticed that our data doesn't lie on the 45 degree line. We noticed that the sample quantiles towards the right are significantly larger than the theoretical quantiles the normal distribution would predict. </br>
 
-
-
-If we were to use a normal distribution to model our data, it would severly underpredict the frequency of extreme values of x. This means that we would understate the possibilities of the AHB arrival.
+If we were to use a normal distribution to model our data, it would severly underpredict the frequency of extreme values of x. This means that we would understate the possibilities of the AHB arrival. </br>
 
 Knowing this, it's possible that we can fit a better distribution function for the AHB data with the gamma distribution. 
 
@@ -61,13 +71,9 @@ The Gamma Distribution
 </h2>
 
 <p>
-The Gamma Distribution is a continuous probability density function that is used to model the time required to perform some operation. Just as the Poisson distribution is the time-continuous distribution of the binomial, so is the gamma distribution the time-continuous analog of the negative binomial.
+The Gamma Distribution is a continuous probability density function that is used to model the time required to perform some operation. Just as the Poisson distribution is the time-continuous distribution of the binomial, so is the gamma distribution the time-continuous analog of the negative binomial. </br>
 
-The Gamma is a prediction of the time of the "rth" random arrival of some event. In this case, we were looking at the rth bee.
-
-A Gamma distribution was chosen to model the unimodal, skewed distribution which takes on only positive values. 
-
-Here they look at the reciprocal of speed, the "transit time" which models instead, the time required to travel a fixed distance.
+Matis and Kiffe choose to use the gamma distribution since the data models a unimodal, skewed distribution which takes on only positive values. The Gamma is a prediction of the time of the "rth" random arrival of some event. In this case, they were looking at the arrival of the "rth"" bee. Here they look at the reciprocal of speed, the "transit time" which models instead, the time required to travel a fixed distance. </br>
 
 Displayed below is a graph of the normal vs. the gamma distribution fitted on the data of the estimated transit time for AHBs. We see that the gamma distribution fits the data a lot better and weighs right tailed distributions more likely compared to the normal distribution. 
 
@@ -79,7 +85,7 @@ Displayed below is a graph of the normal vs. the gamma distribution fitted on th
 Conclusion
 </h2>
 <p>
-The Gamma distribution was found to be a good predictor of the African Honey Bee arrival time. The best fit gamma distribution for this data had an alpha value of 1.61 and a beta value of 2.37. 
+The Gamma distribution was found to be a good predictor of the African Honey Bee arrival time. The best fit gamma distribution for this data had an alpha value of 1.61 and a beta value of 2.37. </br>
 
 The strength of such a distribution is its ability to take into account the natural variability of the arrival. However, its limitations are also plentiful as there are many conditions that are static. For instance, this distribution does not take into account the presence of any predators or environmental factors.
 </p>
@@ -141,11 +147,11 @@ The Gamma Distribution is as follows:
 
 $\frac{(&#946;^&#945;)}{(&#945;-1)!} e^{-&#946;y} y^{&#945; - 1}$ </br>
 
-Pick an &#945; and &#946; parameter on the slider below. 
+Pick an &#945; and &#946; parameter on the slider below. </br>
 
-Notice what happens to the shape when you change the &#945; parameter to 1, keeping &#946; constant. Then continue increasing the &#945; parameter while keeping the &#946; constant, and notice what the gamma distribution reesembles as it changes.
+Notice what happens to the shape when you change the &#945; parameter to 1, keeping &#946; constant. Then continue increasing the &#945; parameter while keeping the &#946; constant, and notice what the gamma distribution reesembles as it changes. </br>
 
-Now, observe the change when you vary the &#946; parameter while keeping the &#945; parameter constant. &#946; has a strong impact on the shape of the gamma distribution. When &#946; is less than 1, we tend to observe relatively broad distributions with long tails. As the value of &#946; increases, the distributions become tighter. This is because the variance of the gamma distribution is $\frac{&#945;}{&#946;^2}$
+Now, observe the change when you vary the &#946; parameter while keeping the &#945; parameter constant. &#946; has a strong impact on the shape of the gamma distribution. When &#946; is less than 1, we tend to observe relatively broad distributions with long tails. As the value of &#946; increases, the distributions become tighter. This is because the variance of the gamma distribution is $\frac{&#945;}{&#946;^2}$. Additionally, the expected value of the gamma distribution is &#945;*&#946;.
 </p>
 
 &#945; and &#946; values are both positive where &#945; is a shape parameter and &#946; is a scale parameter. These parameters are most easily undertstood when &#945; is an integer. In this case, the gamma models the sum of &#945; independent exponential random variables which each has a mean corresponding to the inverse of the &#946; parameter. 
@@ -153,14 +159,19 @@ Now, observe the change when you vary the &#946; parameter while keeping the &#9
 
 <div class="form-group shiny-input-container">
             <label class="control-label" for="alpha">Alpha:</label>
-            <input class="js-range-slider" id="integer" data-min="0" data-max="10" data-step="1" data-grid="true" data-grid-num="10" data-grid-snap="false" data-prettify-separator="," data-keyboard="true" data-keyboard-step="0.1"/>
+            <input class="js-range-slider" id="alpha" data-min="0" data-max="10" data-step="0.01" data-grid="true" data-grid-num="10" data-grid-snap="false" data-prettify-separator="," data-keyboard="true" data-keyboard-step="0.01"/>
           </div>
 
 <div class="form-group shiny-input-container">
             <label class="control-label" for="beta">Beta:</label>
-            <input class="js-range-slider" id="integer" data-min="0" data-max="10" data-step="1" data-grid="true" data-grid-num="10" data-grid-snap="false" data-prettify-separator="," data-keyboard="true" data-keyboard-step="0.1"/>
+            <input class="js-range-slider" id="beta" data-min="0" data-max="10" data-step=".01" data-grid="true" data-grid-num="10" data-grid-snap="false" data-prettify-separator="," data-keyboard="true" data-keyboard-step="0.01"/>
           </div>
        
+
+<button id="a1" type="button" class="btn btn-default action-button">Plot </button>
+
+<button id="a2" type="button" class="btn btn-default action-button">&#945; = 5 </br> &#945; = 6 </button>
+
 <p>
 <button id="makePlot" type="button" class="btn btn-default action-button">Plot </button>
 </p>

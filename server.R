@@ -34,7 +34,6 @@ shinyServer(function(input, output) {
     
     plotParams <- reactiveValues(alpha = 1, beta = 1)
     
-    #input is not an integer????
     observeEvent( input$makePlot, {
       plotParams$alpha = input$alpha
       plotParams$beta = input$beta
